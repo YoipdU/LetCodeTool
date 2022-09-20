@@ -5,8 +5,17 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 通过反射获取接口实现类的工具
+ * 获取接口class文件路径，获取该路径下的所有文件，排除非.class结尾的文件，通过反射获取class文件的接口信息，并比较是否目标接口相符合。
+ */
 public class ClassUtil {
 
+    /**
+     * 获取接口的所有实现类
+     * @param in
+     * @return
+     */
     public List<Object> getAllClassByInterface(Class in) {
         if(!in.isInterface()){
             try{
